@@ -1,0 +1,16 @@
+trigger:
+-main
+
+Pool:
+ vmImage:'windows latest'
+ 
+steps:
+ -script: echo 'Hello  World'
+ displayName: 'Run Hello world Script'
+
+ -script: |
+    echo 'Checking files'
+    ls - la
+  displayName: 'List Files'
+
+ 
