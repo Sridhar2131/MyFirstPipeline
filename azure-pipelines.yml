@@ -14,3 +14,16 @@ steps:
   displayName: 'List Files'
 
  
+ -task: CopyFiles@2
+  displayName: 'Copy Application Files'
+  inputs:
+   SourceFolder: '$(Build.SourceDirectory)/app'
+   contents: '**'
+   TargetFolder: '$(Build.ArtifactStagingDirectory)/app'
+
+ -task: PublishBuildArtifact@1
+  displayName: 'Publish Artifact'
+  inputs:
+   PathtoPublish: '$(Build.ArtifactStagingDirectory)/app'
+   ArtifactName: 'Myapp'
+   publishLocation: 'Container'
