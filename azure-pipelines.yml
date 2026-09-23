@@ -11,7 +11,7 @@ steps:
  -script: |
     echo 'Checking files'
     ls - la
-  displayName: 'List Files'
+ displayName: 'List Files'
 
  
  -task: CopyFiles@2
